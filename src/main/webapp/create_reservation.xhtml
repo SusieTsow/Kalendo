@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: susietsow
+  Date: 14.10.24
+  Time: 13:11
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Neue Reservation erstellen</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</h:head>
+
+<h:body styleClass="container">
+    <h1>Neue Reservation erstellen</h1>
+
+    <h:form styleClass="create-table">
+        <h:panelGrid columns="2">
+            <h:outputLabel styleClass="output-label" for="date" value="Datum: " />
+            <h:inputText styleClass="input-text" id="date" value="" required="true">
+                <f:convertDateTime pattern="dd.MM.yyyy" />
+            </h:inputText>
+
+            <h:outputLabel styleClass="output-label" for="startTime" value="Von: " />
+            <h:inputText styleClass="input-text" id="startTime" value="" required="true">
+                <f:convertDateTime pattern="HH:mm" />
+            </h:inputText>
+
+            <h:outputLabel styleClass="output-label" for="endTime" value="Bis: " />
+            <h:inputText styleClass="input-text" id="endTime" value="" required="true">
+                <f:convertDateTime pattern="HH:mm" />
+            </h:inputText>
+
+            <h:outputLabel styleClass="output-label" for="room" value="Zimmer:" />
+            <h:selectOneListbox styleClass="one-list-box" id="room" value="" required="true">
+                <f:selectItem itemValue="101" itemLabel="101" />
+                <f:selectItem itemValue="102" itemLabel="102" />
+                <f:selectItem itemValue="103" itemLabel="103" />
+                <f:selectItem itemValue="104" itemLabel="104" />
+                <f:selectItem itemValue="105" itemLabel="105" />
+            </h:selectOneListbox>
+
+            <h:outputLabel styleClass="output-label" for="remarks" value="Bemerkung: " />
+            <h:inputTextarea styleClass="input-textarea" id="remarks" value="" required="true">
+                <f:validateLength minimum="10" maximum="200" />
+            </h:inputTextarea>
+
+            <h:outputLabel styleClass="output-label" for="participants" value="Teilnehmern: " />
+            <h:inputTextarea styleClass="input-textarea" id="participants" value="" required="true">
+                <f:validateRegex pattern="^[A-Za-z]+(,[A-Za-z]+)*$" />
+            </h:inputTextarea>
+        </h:panelGrid>
+
+        <h:commandButton styleClass="btn" value="Reservation erstellen" />
+    </h:form>
+
+</h:body>
+
+</html>

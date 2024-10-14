@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: susietsow
+  Date: 14.10.24
+  Time: 14:59
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Terminbestätigung</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</h:head>
+
+<h:body styleClass="container">
+    <h1>Termin erfolgreich erstellt</h1>
+    <h:panelGrid columns="2">
+        <h:outputText styleClass="output-label" value="Private Schlüssel: " />
+        <h:outputText styleClass="output-label" value="" />
+
+        <h:outputText styleClass="output-label" value="Public Schlüssel: " />
+        <h:outputText styleClass="output-label" value="" />
+    </h:panelGrid>
+
+    <h:form>
+        <h:commandButton styleClass="btn" value="Zurück zur Startseite" action="index" />
+    </h:form>
+</h:body>
+
+</html>

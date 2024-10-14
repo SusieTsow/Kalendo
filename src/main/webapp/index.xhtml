@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: susietsow
+  Date: 13.10.24
+  Time: 19:52
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Kalendo</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</h:head>
+
+<h:body styleClass="container">
+    <h1>Herzlich Willkommen im Kalendo</h1>
+
+    <h:form styleClass="kalendo-form">
+        <h:outputText value="Hier können Sie einen neuen Termin machen." />
+        <h:commandButton styleClass="btn" id="reservieren" value="Reservation" action="create_reservation" />
+    </h:form>
+
+    <h:form styleClass="kalendo-form">
+        <h:outputText value="Hier können Sie Ihr PK oder FK eingeben." />
+        <h:inputText styleClass="input-text" value="" />
+        <h:commandButton styleClass="btn" value="Schlüssel eingeben" action="view_reservation" />
+    </h:form>
+
+    <h:outputText value="Hier sind die List der Reservationen" />
+    <h:dataTable value="" border="1" var="">
+        <h:column>
+            <f:facet name="header">
+                DATUM
+            </f:facet>
+            #{reservation.date}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                VON
+            </f:facet>
+            #{reservation.startTime}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                BIS
+            </f:facet>
+            #{reservation.endTime}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                ZIMMER
+            </f:facet>
+            #{reservation.room}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                BEMERKUNG
+            </f:facet>
+            #{reservation.remarks}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                TEILNEHMERN
+            </f:facet>
+            #{reservation.participants}
+        </h:column>
+    </h:dataTable>
+
+</h:body>
+
+</html>
